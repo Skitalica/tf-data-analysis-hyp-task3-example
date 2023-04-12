@@ -6,7 +6,7 @@ from scipy.stats import permutation_test
 chat_id = 277684942 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool: 
-    p_value = sps.permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis), 
+    p_value = permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis), 
                  vectorized=True, 
                  n_resamples=5000,
                  alternative='greater').pvalue 
